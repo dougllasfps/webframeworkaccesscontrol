@@ -15,22 +15,26 @@ import Navbar from './common/template/Navbar'
 import Footer from './common/template/Footer'
 import Rotas from './common/template/Rotas'
 
-
 import { HashRouter as Router } from 'react-router-dom';
 import {Container} from 'reactstrap'
+
+import Login from './components/login/Login'
+import AppContext from './main/AppContext'
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Navbar />
-          <Container fluid>
-            <Rotas />
-            </Container>
-          <Footer />
-        </div>
-      </Router>
+      <AppContext>
+        <Router>
+          <div className="App">
+            <Navbar />
+            <Container fluid>
+              <Rotas />
+              </Container>
+            <Footer />
+          </div>
+        </Router>
+      </AppContext>
     );
   }
 }

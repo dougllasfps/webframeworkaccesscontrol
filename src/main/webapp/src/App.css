@@ -1,6 +1,10 @@
 .container, .container-fluid {
-  margin-top: 20px;
+  margin-top: 30px;
 } 
+
+.container{
+  padding: 30px;
+}
 
 .colunaAcoes{
   width: 130px;

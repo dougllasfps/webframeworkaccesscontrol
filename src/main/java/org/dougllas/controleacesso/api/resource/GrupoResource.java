@@ -1,8 +1,6 @@
 package org.dougllas.controleacesso.api.resource;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import org.dougllas.controleacesso.api.dto.GrupoFormDto;
 import org.dougllas.controleacesso.model.Grupo;
 import org.dougllas.controleacesso.model.Permissao;
 import org.dougllas.controleacesso.service.GrupoService;
@@ -33,15 +31,14 @@ public class GrupoResource {
     }
 
     @GetMapping("/novo")
-    public GrupoDto novo(){
+    public GrupoFormDto novo(){
         List<Permissao> permissoes = permissaoService.findAll();
-        return new GrupoDto(new Grupo(), permissoes);
+        return new GrupoFormDto(new Grupo(), permissoes);
     }
 
     @GetMapping("{id}")
     public ResponseEntity findOne(@PathVariable("id") Integer id){
-        List<Permissao> permissoes = permissaoService.findAll();
-        return service.find(id).map( g -> ResponseEntity.ok(new GrupoDto(g, permissoes)) ).orElse(new ResponseEntity(HttpStatus.NOT_FOUND));
+        return service.find(id).map( g -> ResponseEntity.ok(new GrupoFormDto(g, permissaoService.findAll())) ).orElse(new ResponseEntity(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping
@@ -65,14 +62,4 @@ public class GrupoResource {
         }).orElse( new ResponseEntity(null, HttpStatus.NOT_FOUND) );
     }
 
-
-    @Getter
-    @Setter
-    @AllArgsConstructor
-    private class GrupoDto {
-
-        private Grupo entity;
-        private List<Permissao> permissoesDisponiveis;
-
-    }
 }

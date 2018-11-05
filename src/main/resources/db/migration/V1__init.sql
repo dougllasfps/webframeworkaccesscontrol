@@ -37,8 +37,8 @@ drop table if exists controleacesso.usuario_grupo ;
 
 create table controleacesso.usuario_grupo (
   id serial not null primary key ,
-  cd_grupo int not null,
-  cd_usuario int not null
+  id_grupo int not null,
+  id_usuario int not null
 );
 --
 -- alter table controleacesso.usuario_grupo
