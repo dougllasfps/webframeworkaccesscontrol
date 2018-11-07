@@ -1,6 +1,21 @@
 import React from 'react'
 
-const ApplicationContext = React.createContext()
+export const ApplicationContext = React.createContext()
+
+export const withConsumer = (Consumer) => (WrappedComponent) => {
+    return class extends React.Component {
+       render() {
+           console.log(Consumer, WrappedComponent)
+          return (
+              <Consumer>
+                  {(context)=>(
+                      <WrappedComponent {...context.state} {...context} />
+                  )}
+              </Consumer>
+          )
+       }
+    }
+ }
 
 export default class AppContext extends React.Component{
     

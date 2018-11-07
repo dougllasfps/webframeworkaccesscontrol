@@ -5,6 +5,7 @@ import GrupoService from './GrupoService'
 import PermissaoService from '../permissao/PermissaoService'
 
 export const GrupoContext = React.createContext()
+export const GrupoConsumer = GrupoContext.Consumer
 
 export default class Grupo extends React.Component{
 
@@ -71,7 +72,6 @@ export default class Grupo extends React.Component{
     }
 
     handleFormChange = (event) => {
-        console.log(event.target.value)
         let name = event.target.name
         let value = event.target.value
         this.setState({...this.state, entity: { ...this.state.entity, [name] : value}})

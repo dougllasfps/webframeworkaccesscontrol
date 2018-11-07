@@ -13,13 +13,14 @@ import 'fontawesome'
 
 import Navbar from './common/template/Navbar'
 import Footer from './common/template/Footer'
-import Rotas from './common/template/Rotas'
 
 import { HashRouter as Router } from 'react-router-dom';
 import {Container} from 'reactstrap'
 
-import Login from './components/login/Login'
+import IndexPage from './components/index/IndexPage'
 import AppContext from './main/AppContext'
+import Rotas from './common/template/Rotas';
+
 
 class App extends Component {
   render() {
@@ -28,8 +29,8 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Container fluid>
-              <Rotas />
+              <Container fluid>
+                <Rotas />              
               </Container>
             <Footer />
           </div>
