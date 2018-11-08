@@ -1,4 +1,7 @@
 drop table if exists controleacesso.permissao ;
+drop table if exists controleacesso.grupo ;
+drop table if exists controleacesso.grupo_permissao ;
+drop table if exists controleacesso.usuario ;
 
 create table controleacesso.permissao(
   id serial not null primary key ,
@@ -22,7 +25,7 @@ create table controleacesso.grupo_permissao(
   id_permissao int not null
 );
 
-drop table if exists controleacesso.usuario ;
+drop table if exists controleacesso.usuario;
 
 create table controleacesso.usuario(
   id serial not null primary key ,
