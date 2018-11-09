@@ -19,6 +19,9 @@ export default class AppNavBar extends React.Component{
                 <Collapse isOpen={this.state.open} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
+                        <NavLink tag={Link} to="/usuarios">Usuários</NavLink>
+                    </NavItem>
+                    <NavItem>
                         <NavLink tag={Link} to="/permissoes">Permissoes</NavLink>
                     </NavItem>
                     <NavItem>

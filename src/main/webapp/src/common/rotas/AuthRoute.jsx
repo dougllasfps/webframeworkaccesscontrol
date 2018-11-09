@@ -8,7 +8,6 @@ class AuthRoute extends React.Component{
 
     renderRoute = (props) => {
 
-
         let authorized = this.props.hasAuthority(this.props.authority)
         if(authorized){
             return (
