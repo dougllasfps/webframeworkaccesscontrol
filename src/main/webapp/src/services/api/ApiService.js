@@ -1,6 +1,6 @@
 import Api from './Api'
 
-import {showErrorMessage,showSuccessMessage,showWarnMessage} from '../messages/messages'
+import {showErrorMessage,showSuccessMessage,showWarnMessage} from '../../components/messages/messages'
 
 export default class GenericService {
 

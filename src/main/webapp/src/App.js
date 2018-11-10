@@ -11,15 +11,15 @@ import 'primeicons/primeicons.css';
 
 import 'fontawesome'
 
-import Navbar from './common/template/Navbar'
-import Footer from './common/template/Footer'
-import Rotas from './common/rotas/Rotas'
+import Navbar from './components/template/Navbar'
+import Footer from './components/template/Footer'
+import Rotas from './main/rotas/Rotas'
 
 import { HashRouter as Router } from 'react-router-dom';
 import {Container} from 'reactstrap'
 
-import AppContext from './main/AppContext'
-import {AuthContextProvider} from './main/AuthContext'
+import AppContext from './main/contexto/AppContext'
+import {AuthContextProvider} from './main/contexto/AuthContext'
 
 class App extends Component {
   render() {

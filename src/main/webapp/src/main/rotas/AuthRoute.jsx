@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Route } from 'react-router-dom';
 
-import {AuthContextConsumer} from '../../main/AuthContext'
+import {AuthContextConsumer} from '../contexto/AuthContext'
 
 class AuthRoute extends React.Component{
 

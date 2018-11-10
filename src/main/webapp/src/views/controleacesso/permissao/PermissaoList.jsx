@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Page from '../../common/template/Page'
 import {Row, Col, Button} from 'reactstrap'
 import {DataTable} from 'primereact/datatable';
 import {Column} from 'primereact/column';
-import Confirm from '../../common/components/Confirm'
+import Confirm from '../../../components/common/Confirm'
 
 import {PermissaoContext} from './Permissao'
+import Page from "../../../components/template/Page";
 
 
 class PermissaoList extends React.Component {

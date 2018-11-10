@@ -1,9 +1,9 @@
 import React from 'react'
 import {Form, FormGroup, Input, Label, Row, Col, Button} from 'reactstrap'
-import Page from '../../common/template/Page'
-import RenderIf from '../../common/components/RenderIf'
+import RenderIf from '../../../components/common/RenderIf'
 
 import {PermissaoContext} from './Permissao'
+import Page from "../../../components/template/Page";
 
 class PermissaoForm extends React.Component {
     render(){

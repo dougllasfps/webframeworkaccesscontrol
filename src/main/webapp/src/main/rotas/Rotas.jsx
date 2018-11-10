@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom';
-import Permissao from '../../components/permissao/Permissao'
-import Grupo from '../../components/grupo/Grupo'
-import Home from '../../components/Home'
+import Permissao from '../../views/controleacesso/permissao/Permissao'
+import Grupo from '../../views/controleacesso/grupo/Grupo'
+import Home from '../../views/Home'
 
 export default class Rotas extends React.Component{
     render(){

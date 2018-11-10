@@ -1,13 +1,13 @@
 import React from 'react'
 import {Form, FormGroup, Input, Label, Row, Col, Button} from 'reactstrap'
-import Page from '../../common/template/Page'
-import RenderIf from '../../common/components/RenderIf'
+import RenderIf from '../../../components/common/RenderIf'
 
 import {DataTable} from 'primereact/datatable'
 import {Panel} from 'primereact/panel'
 
 import {GrupoContext} from './Grupo'
 import { Column } from 'primereact/column';
+import Page from "../../../components/template/Page";
 
 class GrupoForm extends React.Component {
 

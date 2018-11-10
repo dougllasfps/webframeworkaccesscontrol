@@ -1,5 +1,4 @@
-import ApiService from '../../common/api/ApiService'
-
+import ApiService from "../../../services/api/ApiService";
 const baseUrl = `${process.env.REACT_APP_BASE_SERVICE_URL}/api/usuarios`
 
 export default class GrupoService extends ApiService{
