@@ -37,7 +37,7 @@ public class UsuarioDto {
     public Usuario to(){
         return Usuario.builder()
                 .email(this.email)
-                .grupos(new HashSet(this.grupos))
+                .grupos(new HashSet(GrupoDto.to(this.grupos)))
                 .nome(this.nome)
                 .senha(this.senha)
                 .id(this.id)

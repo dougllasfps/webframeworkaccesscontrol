@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Page from '../../../common/template/Page'
+import Page from "../../../components/template/Page";
 import {Row, Col, Button} from 'reactstrap'
 import {DataTable} from 'primereact/datatable';
 import {Column} from 'primereact/column';
@@ -39,7 +39,8 @@ class UsuarioList extends React.Component {
     render(){
         let cols = [
             {field: 'id', header : 'Código', className: 'colunaAcoes'},
-            {field: 'descricao', header : 'Descrição'},
+            {field: 'nome', header : 'Nome'},
+            {field: 'email', header : 'Email'},
             {body: this.actionTemplate, header: '', className: 'colunaAcoes', field: 'acaoId'}
         ]
 

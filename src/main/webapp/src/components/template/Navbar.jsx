@@ -13,7 +13,7 @@ export default class AppNavBar extends React.Component{
 
     render(){
         return (
-            <Navbar color="dark" dark expand="md">
+            <Navbar expand="md" className="navbar navbar-light navbar-bg">
                 <NavbarBrand tag={Link} to="/">Início</NavbarBrand>
                 <NavbarToggler onClick={this.toggle}/>
                 <Collapse isOpen={this.state.open} navbar>

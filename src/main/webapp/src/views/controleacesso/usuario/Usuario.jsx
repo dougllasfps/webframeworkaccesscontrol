@@ -4,11 +4,13 @@ import UsuarioList from './UsuarioList'
 import UsuarioService from './UsuarioService'
 import GrupoService from '../grupo/GrupoService'
 
+import {ApplicationContextConsumer} from '../../../main/contexto/AppContext'
+
 export const UsuarioContext = React.createContext()
 
-export default class Usuario extends React.Component {
+class Usuario extends React.Component {
 
-    newEntity = { id: '', nome: '', email: '', senha: '', senhaMatch: '', grupos: [] }
+    newEntity = { id: '', nome: '', email: '', cpf: '', grupos: [] }
 
     state = {
         renderList: true,
@@ -25,13 +27,8 @@ export default class Usuario extends React.Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault()
-
-        this.service.save(this.state.entity).then( resp => {
-            this.setState({...this.state, renderList: true})
-            this.listar()
-            this.service.msgSuccess("Item Salvo com sucesso!")
-        })
+        this.props.showLoad()
+        
     }
 
     cancelar = () =>{
@@ -76,20 +73,18 @@ export default class Usuario extends React.Component {
         this.setState({...this.state, entity: { ...this.state.entity, [name] : value}})
     }
 
-    selecionarGrupos = (grupos) => {
-        this.setState({...this.state, entity: {...this.state.entity, grupos} })
-    } 
-
     componentWillMount(){
-        console.log('componentWillMount')
         if(this.state.renderList){
-            console.log(this.state.renderList)
             this.listar()
         }
     }
 
     componentWillUnmount(){
         this.setState({})
+    }
+
+    selecionarGrupos = (event) => {
+        this.setState({...this.state, gruposDisponiveis: event.source, entity: {...this.state.entity, grupos: event.target}})
     }
 
     render(){
@@ -117,3 +112,11 @@ export default class Usuario extends React.Component {
         )
     }
 }
+
+export default props => (
+    <ApplicationContextConsumer>
+        {(appContext) => (
+            <Usuario showLoad={appContext.showLoad} hideLoad={appContext.hideLoad} />
+        )}
+    </ApplicationContextConsumer>
+)

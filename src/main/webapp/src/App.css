@@ -114,3 +114,33 @@ footer{
  flex: 0 0 auto;
  -webkit-flex: 0 0 auto;
 }
+
+.navbar-bg{
+  background-color:teal; 
+}
+
+.header{
+  height: 50px;
+}
+
+.appTitle{
+  position: relative;
+  bottom: 50px;
+}
+
+.nav-link {
+  color: #FFFFFF  !important;
+}
+
+.nav-link:hover {
+  color: #6c757d !important;
+  background: #FFFFFF;
+}
+
+.app-bg{
+  background: #777;
+}
+
+.full-width{
+  width: 100%;
+}
