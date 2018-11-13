@@ -17,8 +17,8 @@ class UsuarioList extends React.Component {
 
     actionTemplate = (rowData, column) => {
         return <div>
-            <Button type="button" color="primary" className="mr-2" onClick={() => this.props.editar(rowData)}><i className="pi pi-pencil"></i></Button>
-            <Button type="button" color="danger" onClick={() => this.prepareDelete(rowData)}><i className="pi pi-trash"></i></Button>
+            <Button type="button" color="default" className="mr-2" onClick={() => this.props.editar(rowData)}><i className="pi pi-pencil"></i></Button>
+            <Button type="button" color="default" onClick={() => this.prepareDelete(rowData)}><i className="pi pi-trash"></i></Button>
         </div>;
     }
 
@@ -52,7 +52,7 @@ class UsuarioList extends React.Component {
             <Page title="Usuários">
                 <Row className="p-grid">
                     <Col md="12">
-                        <Button onClick={this.props.novo} color="success" style={{float: 'right'}}>Novo</Button>
+                        <Button onClick={this.props.novo} color="default" style={{float: 'right'}}>Novo</Button>
                     </Col>                        
                 </Row>
                 <br />

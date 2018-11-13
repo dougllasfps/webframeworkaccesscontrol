@@ -116,7 +116,7 @@ footer{
 }
 
 .navbar-bg{
-  background-color:teal; 
+  background-color:#009999; 
 }
 
 .header{
@@ -143,4 +143,10 @@ footer{
 
 .full-width{
   width: 100%;
+}
+
+.page-content{
+  background: #FFEFFE;
+  border-radius: 8px;
+  padding: 20px;
 }

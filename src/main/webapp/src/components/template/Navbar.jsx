@@ -13,12 +13,12 @@ export default class AppNavBar extends React.Component{
 
     render(){
         return (
-            <Navbar expand="md" className="navbar navbar-light navbar-bg">
+            <Navbar expand="md" color="dark" className="navbar navbar-dark" dark>
                 <NavbarBrand tag={Link} to="/">Início</NavbarBrand>
                 <NavbarToggler onClick={this.toggle}/>
                 <Collapse isOpen={this.state.open} navbar>
                 <Nav className="ml-auto" navbar>
-                    <NavItem>
+                    <NavItem className="navbar-left" >
                         <NavLink tag={Link} to="/usuarios">Usuários</NavLink>
                     </NavItem>
                     <NavItem>
