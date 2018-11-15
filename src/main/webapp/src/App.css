@@ -7,7 +7,7 @@
 }
 
 .colunaAcoes{
-  width: 130px;
+  width: 50px;
 }
 
 footer{
@@ -149,4 +149,8 @@ footer{
   background: #FFEFFE;
   border-radius: 8px;
   padding: 20px;
+}
+
+.inside-page{
+  margin-top: 60px;  
 }

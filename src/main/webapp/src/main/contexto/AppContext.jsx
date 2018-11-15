@@ -8,7 +8,8 @@ export const ApplicationContextConsumer = ApplicationContext.Consumer
 export default class AppContext extends React.Component{
 
     state = {
-        loading: false
+        loading: false,
+        drawerOpen : false
     }
 
     showLoad = () => {
@@ -19,11 +20,22 @@ export default class AppContext extends React.Component{
         this.setState({loading: false, ...this.state})
     }
 
+    handleDrawerOpen = () => {
+        this.setState({ drawerOpen: true });
+    };
+
+    handleDrawerClose = () => {
+        this.setState({ drawerOpen: false });
+    };
+
     render(){        
 
         let ctx = {
             showLoad : this.showLoad,
-            hideLoad: this.hideLoad
+            hideLoad: this.hideLoad,
+            handleDrawerOpen: this.handleDrawerOpen,
+            handleDrawerClose: this.handleDrawerClose,
+            drawerOpen: this.state.drawerOpen
         }
 
         return (

@@ -11,7 +11,7 @@ import 'primeicons/primeicons.css';
 
 import 'fontawesome'
 
-import Header from './components/template/Header'
+import Drawer from './components/template/Drawer'
 import Navbar from './components/template/Navbar'
 import Footer from './components/template/Footer'
 import Rotas from './main/rotas/Rotas'
@@ -29,7 +29,7 @@ class App extends Component {
           <AuthContextProvider>
             <Router>
               <div className="App">
-                <Header />
+                <Drawer />
                 <Navbar />
                 <Container fluid>
                   <Rotas />

@@ -1,13 +1,16 @@
 import React from 'react'
 
-import {Row, Col, Button} from 'reactstrap'
-import {DataTable} from 'primereact/datatable';
-import {Column} from 'primereact/column';
+import DataTable from '../../../components/common/DataTable'
+import Button from '@material-ui/core/Button';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import {Row, Col} from 'reactstrap'
 import Confirm from '../../../components/common/Confirm'
-
 import {PermissaoContext} from './Permissao'
 import Page from "../../../components/template/Page";
-
 
 class PermissaoList extends React.Component {
 
@@ -39,30 +42,43 @@ class PermissaoList extends React.Component {
 
     render(){
         let cols = [
-            {field: 'id', header : 'Código', className: 'colunaAcoes'},
-            {field: 'descricao', header : 'Descrição'},
-            {field: 'label', header : 'Label'},
-            {body: this.actionTemplate, header: '', className: 'colunaAcoes', field: 'acaoId'}
+            {header : 'Código', className: 'colunaAcoes'},
+            {header : 'Descrição'},
+            {header : 'Label'},
+            {header: '', className: 'colunaAcoes'},
+            {header: '', className: 'colunaAcoes'}
         ]
 
-        let dynamicColumns = cols.map((col,i) => {
-            return <Column key={col.field} field={col.field} header={col.header} body={col.body} className={col.className} />;
-        });
+        let {list} = this.props || []
 
         return(
             <Page title="Permissões">
                 <Row className="p-grid">
                     <Col md="12">
-                        <Button onClick={this.props.novo} color="default" style={{float: 'right'}}>Novo</Button>
+                        <Button variant="contained" color="primary" onClick={this.props.novo} style={{float: 'right'}}>Novo</Button>
                     </Col>                        
                 </Row>
                 <br />
                 <Row>
                     <Col md="12">
-                        <DataTable value={this.props.list}
-                                    paginator={true}
-                                    rows={10}>
-                            {dynamicColumns}
+                        <DataTable cols={cols}>
+                            {list.map( item => (
+                                <TableRow key={item.id}>
+                                    <TableCell>{item.id}</TableCell>
+                                    <TableCell>{item.descricao}</TableCell>
+                                    <TableCell>{item.label}</TableCell>
+                                    <TableCell>
+                                        <IconButton onClick={ (e) => this.props.editar(item) }>
+                                            <EditIcon />
+                                        </IconButton>
+                                    </TableCell>
+                                    <TableCell>
+                                        <IconButton onClick={ (e) => this.prepareDelete(item) }>
+                                            <DeleteIcon />
+                                        </IconButton>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
                         </DataTable>
                     </Col>
                 </Row>
